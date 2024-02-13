@@ -1,5 +1,15 @@
 # Duelling Mythicals
 
+## Features
+
+### Favicon
+
+I used [X-Icon Editor](https://www.xiconeditor.com) to make a favicon resembling a dragon. It will help the user to easily locate Duelling Mythicals among a potential multitude of open tabs, bookmarks, or shortcuts. Also, subjectively, a site with a favicon can feel more complete or even more trustworthy.
+
+Below, the favicon is seen in some of its possible locations. I temporarily changed a folder icon to my favicon to simulate what it might look like if occurring in a shortcut.
+
+<img src="assets/images/icon-demo.webp" alt="favicon mockup" height="220px">
+
 ## Planning
 
 ### Initial ideas
@@ -21,3 +31,9 @@ I planned that a brief narrative justification would be given for each win, loss
 I sketched a wireframe of my initial ideas regarding layout, including some preliminary thoughts on responsiveness, together with a plan to have a start screen that is replaced with the game screen when the user clicks a begin button, as seen here:
 
 ![wireframe](assets/images/wireframe.webp)
+
+## Credits
+
+- I used [Tiny PNG](https://tinypng.com) to optimise images and convert them to .webp, both for the web game and for display in this README.
+
+- I used [X-Icon Editor](https://www.xiconeditor.com) to make the favicon, as mentioned in the features section.
