@@ -1,0 +1,17 @@
+/* font for header, from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Protest+Revolution');
+
+body {
+  background-color: linen;
+}
+
+header {
+  font-family: 'Protest Revolution';
+  font-size: larger;
+  color: maroon;
+  text-align: center;
+}
+
+main {
+  font-family: sans-serif;
+}
