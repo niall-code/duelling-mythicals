@@ -1,6 +1,11 @@
 /* font for header, from Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=Protest+Revolution');
 
+/* removes automatic margins */
+* {
+  margin: 0;
+}
+
 body {
   background-color: linen;
 }
@@ -14,4 +19,52 @@ header {
 
 main {
   font-family: sans-serif;
+}
+
+h1, h3 {
+  margin: 20px 0 10px;
+}
+
+/* hides elements in the class */
+.hid {
+  display: none;
+}
+
+/* the start screen images div */
+#gallery-box {
+  padding-top: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#gallery-box > img {
+  width: 75px;
+  height: 100px;
+  border: 1px solid maroon;
+  margin: 5px;
+}
+
+/* the 'play now' button div */
+#begin-box {
+  margin: 30px 0;
+  text-align: center;
+}
+
+#begin {
+  padding: 10px;
+  font-weight: bolder;
+}
+
+/* the start screen text div */
+#instruct-box {
+  text-align: justify;
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+li {
+  margin-bottom: 8px;
 }

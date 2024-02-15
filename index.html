@@ -12,7 +12,43 @@
       <h1>Duelling Mythicals</h1>
     </header>
 
-    <main></main>
+    <main>
+      <!-- start screen images -->
+      <section aria-labelledby="card-pics">
+        <!-- unseen heading for accessibility/semantic purposes -->
+        <h3 class="hid" id="card-pics">Cards in the game</h3>
+        <div id="gallery-box">
+          <img src="assets/images/dragon.webp" alt="a dragon card">
+          <img src="assets/images/unicorn.webp" alt="a unicorn card">
+          <img src="assets/images/mermaid.webp" alt="a mermaid card">
+          <img src="assets/images/elf.webp" alt="an elf card">
+          <img src="assets/images/fairy.webp" alt="a fairy card">
+        </div>
+      </section>
+
+      <!-- beginning the game -->
+      <section>
+        <div id="begin-box">
+          <button id="begin" aria-label="Play the game">PLAY NOW</button>
+        </div>
+      </section>
+
+      <!-- start screen text -->
+      <section aria-labelledby="summary instructions">
+        <div id="instruct-box">
+          <h3 id="summary">What is it?</h3>
+          <p>Duelling Mythicals is a fantasy-themed, player vs. computer digital card game. Its core mechanic resembles 'rock paper scissors'.</p>
+
+          <h3 id="instructions">How do I play it?</h3>
+          <ul>
+            <li>You and the computer will start with 25-card decks, containing 5 of each mythical creature.</li>
+            <li>On each go, you will have a free choice of which creature to duel with, so long as there is at least 1 of it remaining in your deck.</li>
+            <li>The computer will play a card randomly out of its remaining cards.</li>
+            <li>Your individual wins, losses, and draws will be remembered while the game is in progress. An overall victory, stalemate, or defeat will be calculated from them.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
 
     <script src="assets/js/script.js"></script>
   </body>
