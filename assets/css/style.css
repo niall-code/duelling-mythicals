@@ -85,6 +85,12 @@ li {
   top: 80px;
 }
 
+#player-card-zone > img,
+#computer-card-zone > img {
+  width: 150px;
+  height: 200px;
+}
+
 /* area where directive or narrative text is displayed */
 #text-zone {
   background-color: white;
