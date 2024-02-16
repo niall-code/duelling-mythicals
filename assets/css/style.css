@@ -95,7 +95,7 @@ li {
 #text-zone {
   background-color: white;
   width: 300px;
-  height: 100px;
+  height: 120px;
   border: 2px ridge gray;
   margin: 20px auto 0;
   text-align: justify;
@@ -112,7 +112,7 @@ li {
   flex-direction: column;
   /* elevated up past the text zone to alongside the card zones */
   position: relative;
-  bottom: 500px;
+  bottom: 520px;
   right: 100px;
 }
 
@@ -124,7 +124,7 @@ li {
   text-align: right;
 }
 
-/* card counts emphasised */
+/* card counts boldened */
 .count {
   font-weight: bolder;
 }
@@ -136,7 +136,7 @@ li {
 }
 
 /* new game button */
-#card-buttons > #new {
+#card-buttons > #new-game {
   text-align: center;
   padding-right: 0;
   /* visual separation from gameplay buttons */

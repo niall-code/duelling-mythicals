@@ -68,7 +68,7 @@ document.getElementById('begin').addEventListener('click', initialise);
  * When begin button is clicked, replace start screen with game screen
  * and add event listeners to buttons
 */
-function initialise(event) {
+function initialise() {
   document.body.innerHTML = `
   <main>
     <div id="computer-card-zone" class="card-zone">
@@ -124,19 +124,21 @@ function initialise(event) {
  * When a card selection button is clicked, display corresponding image in player's card zone,
  * remove one card of that kind from player's deck, and have computer likewise pick a card
 */
-function cardChoice(event) {
+function cardChoice() {
   let creature = this.id;
   document.getElementById('player-card-zone').innerHTML = `<img src="assets/images/${creature}.webp" alt="${creature} card">`;
   let position = playerDeck.indexOf(creature);
   playerDeck.splice(position, 1);
   let cardCount = document.getElementById(`${creature}-count`).innerText;
-  cardCount = --parseInt(cardCount);
+  cardCount = parseInt(cardCount) - 1;
   document.getElementById(`${creature}-count`).innerText = cardCount;
+  if (cardCount === 0) {
+    document.getElementById(`${creature}-count`).parentNode.disabled = true;
+  }
   let playerActiveCard = creature;
 
   let remaining = computerDeck.length;
-  let decision;
-  decision = remaining > 1 ? Math.round(Math.random() * remaining) : 0;
+  let decision = Math.floor(Math.random() * remaining);
   creature = computerDeck[decision];
   document.getElementById('computer-card-zone').innerHTML = `<img src="assets/images/${creature}.webp" alt="${creature} card">`;
   computerDeck.splice(decision, 1);
@@ -173,7 +175,7 @@ function compareCards(playerCard, compuCard) {
 }
 
 function endOfGame() {
-  if (!computerDeck.length) {
+  if (playerDeck.length === 0) {
 
     if (wins > losses) {
       document.getElementsByTagName('p')[0].innerHTML += `
@@ -196,5 +198,27 @@ function endOfGame() {
     <br>
     Wins: ${wins} - Losses: ${losses} - Draws: ${draws}
     `;
+  }
+}
+
+function newGame() {
+  if (playerDeck.length !== 0) {
+    if (confirm('Do you wish to stop this game and start a new one?')) {
+      initialise();
+    }
+
+  } else {
+    initialise();
+  }
+}
+
+function startScreen() {
+  if (playerDeck.length !== 0) {
+    if (confirm('Do you wish to leave the game and return to the starting screen?')) {
+      location.reload();
+    }
+
+  } else {
+    location.reload();
   }
 }
