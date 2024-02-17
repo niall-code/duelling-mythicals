@@ -95,7 +95,7 @@ li {
 #text-zone {
   background-color: white;
   width: 300px;
-  height: 120px;
+  height: 130px;
   border: 2px ridge gray;
   margin: 20px auto 0;
   text-align: justify;
@@ -112,7 +112,7 @@ li {
   flex-direction: column;
   /* elevated up past the text zone to alongside the card zones */
   position: relative;
-  bottom: 520px;
+  bottom: 530px;
   right: 100px;
 }
 
@@ -141,4 +141,32 @@ li {
   padding-right: 0;
   /* visual separation from gameplay buttons */
   margin-bottom: 50px;
+}
+
+@media screen and (min-height: 1024px) {
+  body {
+    padding-top: 150px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-zone {
+    top: 100px;
+    left: -50px;
+  }
+
+  #player-card-zone {
+    top: 130px;
+  }
+
+  #card-buttons {
+    right: 300px;
+    bottom: 430px;
+  }
+
+  #text-zone {
+    position: relative;
+    left: 300px;
+    bottom: 120px;
+  }
 }
