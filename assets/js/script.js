@@ -81,7 +81,7 @@ function initialise() {
 
     <div id="text-zone">
       <div id="inner-text-zone">
-        <p>Please choose a card.</p>
+        <p>Now and each turn, please choose a card by clicking a button.</p>
       </div>
     </div>
 
