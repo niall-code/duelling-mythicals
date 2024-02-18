@@ -122,6 +122,7 @@ footer {
   position: relative;
   bottom: 530px;
   right: 100px;
+  appearance: none;
 }
 
 #card-buttons > button {
