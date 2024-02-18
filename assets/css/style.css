@@ -12,6 +12,7 @@ body {
 }
 
 header {
+  /* main heading on start screen */
   font-family: 'Protest Revolution';
   font-size: larger;
   color: maroon;
@@ -63,6 +64,13 @@ h1, h3 {
 
 li {
   margin-bottom: 8px;
+}
+
+/* footer on start screen */
+footer {
+  padding: 30px;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 /* GAME SCREEN */
