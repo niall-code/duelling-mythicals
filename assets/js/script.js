@@ -121,32 +121,54 @@ function initialise() {
 }
 
 /** 
- * When a card selection button is clicked, display corresponding image in player's card zone,
+ * When a card selection button is clicked, display corresponding image in player's card area,
  * remove one card of that kind from player's deck, and have computer likewise pick a card
 */
 function cardChoice() {
+  // Place appropriate image in player's card area
   let creature = this.id;
   document.getElementById('player-card-zone').innerHTML = `<img src="assets/images/${creature}.webp" alt="${creature} card">`;
+
+  // Remove one card of that kind from player's deck
   let position = playerDeck.indexOf(creature);
   playerDeck.splice(position, 1);
+
+  // Decrease number shown on the clicked button accordingly
   let cardCount = document.getElementById(`${creature}-count`).innerText;
   cardCount = parseInt(cardCount) - 1;
   document.getElementById(`${creature}-count`).innerText = cardCount;
+
+  // If there are now no further remaining cards of that kind, disable the button
   if (cardCount === 0) {
     document.getElementById(`${creature}-count`).parentNode.disabled = true;
   }
+
+  // Remember which creature player selected, for upcoming card comparison
   let playerActiveCard = creature;
 
+  // COMPUTER RESPONDS SIMILARLY
+  // A card is chosen via random number generation
   let remaining = computerDeck.length;
   let decision = Math.floor(Math.random() * remaining);
   creature = computerDeck[decision];
+
+  // Place appropriate image in computer's card area
   document.getElementById('computer-card-zone').innerHTML = `<img src="assets/images/${creature}.webp" alt="${creature} card">`;
+
+  // Remove chosen card from computer's deck
   computerDeck.splice(decision, 1);
+
+  // Remember which creature computer played, for the card comparison phase
   let computerActiveCard = creature;
 
+  // Call compareCards function and pass it the necessary arguments
   compareCards(playerActiveCard, computerActiveCard);
 }
 
+/** 
+ * When called at end of cardChoice function, retrieve data from relevant array-containing objects
+ * to display the suitable narrative text and adjust the score tallies appropriately
+*/
 function compareCards(playerCard, compuCard) {
   switch (playerCard) {
     case 'dragon':
@@ -171,9 +193,14 @@ function compareCards(playerCard, compuCard) {
       break;
   }
 
+  // Call endOfGame function
   endOfGame();
 }
 
+/** 
+ * When called at end of compareCards function, check whether game is over yet
+ * and if it is, display the scores and a result-appropriate message
+*/
 function endOfGame() {
   if (playerDeck.length === 0) {
 
@@ -201,6 +228,10 @@ function endOfGame() {
   }
 }
 
+/** 
+ * When new game button is clicked, call initialise function to begin the game again, starting
+ * from the initial game screen. If a game is already in progress, confirm the click was intentional.
+*/
 function newGame() {
   if (playerDeck.length !== 0) {
     if (confirm('Do you wish to stop this game and start a new one?')) {
@@ -212,6 +243,10 @@ function newGame() {
   }
 }
 
+/** 
+ * When home button is clicked, refresh the page to revert from game screen to start screen.
+ * If a game is in progress, confirm the click was intentional.
+*/
 function startScreen() {
   if (playerDeck.length !== 0) {
     if (confirm('Do you wish to leave the game and return to the starting screen?')) {

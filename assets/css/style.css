@@ -143,12 +143,16 @@ li {
   margin-bottom: 50px;
 }
 
+/* media queries */
+/* when screen height is large, add space above content */
 @media screen and (min-height: 1024px) {
   body {
     padding-top: 150px;
   }
 }
 
+/* when screen is wide, rearrange game screen elements
+to make better use of the available space */
 @media screen and (min-width: 1024px) {
   .card-zone {
     top: 100px;
