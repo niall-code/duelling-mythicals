@@ -52,6 +52,7 @@ h1, h3 {
 #begin {
   padding: 10px;
   font-weight: bolder;
+  appearance: none;
 }
 
 /* start screen text div */
@@ -122,7 +123,6 @@ footer {
   position: relative;
   bottom: 530px;
   right: 100px;
-  appearance: none;
 }
 
 #card-buttons > button {
@@ -131,6 +131,7 @@ footer {
   margin: 0 auto 10px;
   /* card count spans aligned */
   text-align: right;
+  appearance: none;
 }
 
 /* card counts boldened */
