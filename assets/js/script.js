@@ -20,7 +20,7 @@ let dragon = {
   mermaid: ['Your dragon lost to their mermaid. She is in water, so fire is useless against her.', 'loss'],
   elf: ['Your dragon won against their elf. His arrows cannot pierce scales.', 'win'],
   fairy: ['Your dragon lost to their fairy. She stunned it with her magical powers.', 'loss'],
-}
+};
 
 let unicorn = {
   dragon: ['Your unicorn lost. It fought bravely but was outmatched by their dragon.', 'loss'],
@@ -28,7 +28,7 @@ let unicorn = {
   mermaid: ['Your unicorn lost to their mermaid. She would have drowned it, if it did not relent.', 'loss'],
   elf: ['Your unicorn won against their elf, beguiling him and letting him have a ride.', 'win'],
   fairy: ['Your unicorn is immune to magic. It won against their fairy.', 'win'],
-}
+};
 
 let mermaid = {
   dragon: ['Your mermaid is in water, so fire is useless against her. She won against their dragon.', 'win'],
@@ -36,7 +36,7 @@ let mermaid = {
   mermaid: ['You both chose a mermaid. Neither creature could gain an advantage.', 'draw'],
   elf: ['Your mermaid lost to their elf. He caught her in a net!', 'loss'],
   fairy: ['Your mermaid lost to their fairy, becoming stunned by her magical powers.', 'loss'],
-}
+};
 
 let elf = {
   dragon: ['Your elf cannot pierce scales with his arrows. He lost to their dragon.', 'loss'],
@@ -44,7 +44,7 @@ let elf = {
   mermaid: ['Your elf won against their mermaid, capturing her with a net.', 'win'],
   elf: ['You both chose an elf. Neither creature could gain an advantage.', 'draw'],
   fairy: ['Your elf managed to win against their fairy, proving himself resistant enough to magic.', 'win'],
-}
+};
 
 let fairy = {
   dragon: ['Your fairy won against their dragon, stunning it with her magical powers.', 'win'],
@@ -52,7 +52,7 @@ let fairy = {
   mermaid: ['Your fairy won against their mermaid, stunning her with her magical powers.', 'win'],
   elf: ['Your fairy lost to their elf. He proved to be sufficiently resistant to magic.', 'loss'],
   fairy: ['You both chose a fairy. Neither creature could gain an advantage.', 'draw'],
-}
+};
 
 // Variables for score tallying
 

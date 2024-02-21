@@ -52,6 +52,7 @@ h1, h3 {
 #begin {
   padding: 10px;
   font-weight: bolder;
+  /* to remedy undesirable automatic styling on some devices */
   appearance: none;
 }
 
@@ -131,6 +132,7 @@ footer {
   margin: 0 auto 10px;
   /* card count spans aligned */
   text-align: right;
+  /* to remedy undesirable automatic styling on some devices */
   appearance: none;
 }
 
