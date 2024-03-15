@@ -1,16 +1,18 @@
 // Arrays that establish the start-of-game decks
 
-let playerDeck = ['dragon', 'dragon', 'dragon', 'dragon', 'dragon',
+let deck = ['dragon', 'dragon', 'dragon', 'dragon', 'dragon',
 'unicorn', 'unicorn', 'unicorn', 'unicorn', 'unicorn',
 'mermaid', 'mermaid', 'mermaid', 'mermaid', 'mermaid',
 'elf', 'elf', 'elf', 'elf', 'elf',
 'fairy', 'fairy', 'fairy', 'fairy', 'fairy'];
 
-let computerDeck = ['dragon', 'dragon', 'dragon', 'dragon', 'dragon',
-'unicorn', 'unicorn', 'unicorn', 'unicorn', 'unicorn',
-'mermaid', 'mermaid', 'mermaid', 'mermaid', 'mermaid',
-'elf', 'elf', 'elf', 'elf', 'elf',
-'fairy', 'fairy', 'fairy', 'fairy', 'fairy'];
+let playerDeck = deck.slice();
+let computerDeck = deck.slice();
+
+// Empty arrays to receive used up cards
+
+let playerDiscards = [];
+let computerDiscards = [];
 
 // Objects containing arrays to read from when comparing cards
 
@@ -129,9 +131,10 @@ function cardChoice() {
   let creature = this.id;
   document.getElementById('player-card-zone').innerHTML = `<img src="assets/images/${creature}.webp" alt="${creature} card">`;
 
-  // Remove one card of that kind from player's deck
+  // Remove one card of that kind from player's deck, put it in their discard pile
   let position = playerDeck.indexOf(creature);
-  playerDeck.splice(position, 1);
+  let discard = playerDeck.splice(position, 1);
+  playerDiscards.push(discard);
 
   // Decrease number shown on the clicked button accordingly
   let cardCount = document.getElementById(`${creature}-count`).innerText;
@@ -155,8 +158,9 @@ function cardChoice() {
   // Place appropriate image in computer's card area
   document.getElementById('computer-card-zone').innerHTML = `<img src="assets/images/${creature}.webp" alt="${creature} card">`;
 
-  // Remove chosen card from computer's deck
-  computerDeck.splice(decision, 1);
+  // Remove chosen card from computer's deck, put it in its discard pile
+  discard = computerDeck.splice(decision, 1);
+  computerDiscards.push(discard);
 
   // Remember which creature computer played, for the card comparison phase
   let computerActiveCard = creature;
@@ -229,16 +233,29 @@ function endOfGame() {
 }
 
 /** 
- * When new game button is clicked, call initialise function to begin the game again, starting
- * from the initial game screen. If a game is already in progress, confirm the click was intentional.
+ * When called during newGame function, moves all cards in the discard piles
+ * back into the corresponding decks, ready for a new game to be played.
+*/
+function replenishDecks() {
+  while (playerDiscards.length !== 0) {
+    computerDeck.push(computerDiscards.pop());
+    playerDeck.push(playerDiscards.pop());
+  };
+}
+
+/** 
+ * When new game button is clicked, call the replenishDecks and initialise functions to begin the game again,
+ * starting from the initial game screen. If a game is already in progress, confirm the click was intentional.
 */
 function newGame() {
   if (playerDeck.length !== 0) {
     if (confirm('Do you wish to stop this game and start a new one?')) {
+      replenishDecks();
       initialise();
     }
 
   } else {
+    replenishDecks();
     initialise();
   }
 }

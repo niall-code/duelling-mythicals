@@ -153,6 +153,14 @@ My deployed project also was inspected with Google's Lighthouse.
 
 <img src="assets/images/readme-images/lighthouse.webp" alt="Lighthouse statistics" height="180px">
 
+## Bug Fix Update
+
+Feedback was received indicating that after clicking 'New Game', users were finding that "undefined card" began appearing in the computer's card zone when a randomly selected card should have been displayed there. This was accompanied by error messages in the console. As suggested in the feedback, the cause was that the decks were not being restored to their original states in preparation for playing a second game.
+
+The bug has now been fixed. Instead of being entirely discarded, the used cards are now moved to discard piles. When a new game is requested, the cards are moved from the discard piles back into the decks they came from. This is done using array methods, to circumvent the issue of variable scopes - as opposed to attempting value reassignment for global variables from within a function.
+
+The original establishing of the decks at the top of the script has also been simplified, a single deck array being copied to two variables instead of being unnecessarily duplicated in the code. This was potentially going to be part of my solution to the bug. It ended up being an unnecessary alteration but has been retained, as it is still better practice to avoid that repetition.
+
 ## Gitignore
 
 My .gitignore file is empty at present, since there are no sensitive or automatically generated files appearing in the directory tree which would require instructions that they be ignored. Regardless, the .gitignore is included as a matter of good practice, so that files can be made ignored easily should the need arise.
