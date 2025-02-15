@@ -173,6 +173,6 @@ My .gitignore file is empty at present, since there are no sensitive or automati
 
 - I used [X-Icon Editor](https://www.xiconeditor.com) to make the favicon.
 
-- The cards' representations of the creatures were drawn by myself using Clip Studio Paint software.
+- The original cards' representations of the creatures were drawn by myself using Clip Studio Paint software. They were later replaced with ChatGPT-generated graphics, for a slightly more professional look.
 
 - The responsiveness mockup at the top of this README was created with [Am I Responsive](https://ui.dev/amiresponsive).
